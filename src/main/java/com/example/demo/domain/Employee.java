@@ -17,27 +17,31 @@ public class Employee {
     private Long id;
 
     @Getter @Setter
-    private Long __id;
+    private Long EmployeesId;
     @Getter @Setter
-    private String name;
+    private String Name;
     @Getter @Setter
-    private String location;
+    private String Location;
+    @Getter @Setter
+    private String __deleted;
 
     public Employee() {
     }
 
-    public Employee(Long __id, String name, String location) {
-        this.__id = __id;
-        this.name = name;
-        this.location = location;
+    public Employee(Long employeesId, String name, String location, String __deleted) {
+        EmployeesId = employeesId;
+        Name = name;
+        Location = location;
+        this.__deleted = __deleted;
     }
 
     @Override
     public String toString() {
         return "Employee{" +
-                "__id=" + __id +
-                ", name='" + name + '\'' +
-                ", location='" + location + '\'' +
+                "EmployeesId=" + EmployeesId +
+                ", Name=" + Name +
+                ", Location=" + Location +
+                ", __deleted='" + __deleted + '\'' +
                 '}';
     }
 
@@ -48,16 +52,11 @@ public class Employee {
 
         Employee employee = (Employee) o;
 
-        if (__id != null ? !__id.equals(employee.__id) : employee.__id != null) return false;
-        if (name != null ? !name.equals(employee.name) : employee.name != null) return false;
-        return location != null ? location.equals(employee.location) : employee.location == null;
+        return id != null ? id.equals(employee.id) : employee.id == null;
     }
 
     @Override
     public int hashCode() {
-        int result = __id != null ? __id.hashCode() : 0;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (location != null ? location.hashCode() : 0);
-        return result;
+        return id != null ? id.hashCode() : 0;
     }
 }

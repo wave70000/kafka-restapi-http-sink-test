@@ -17,9 +17,9 @@ public class BootStrapData implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        Employee jake = new Employee(1L, "jake", "AUS");
+//        Employee wave = new Employee(1L,"testName", "AUS","false");
 
-        employeeRepository.save(jake);
+//        employeeRepository.save(wave);
 
         System.out.println("Started in Bootstrap");
         System.out.println("Number of Employee: " + employeeRepository.count());

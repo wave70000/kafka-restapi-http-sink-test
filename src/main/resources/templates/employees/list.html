@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Spring Framework</title>
+</head>
+<body>
+<h1>Employee List</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Deleted</th>
+    </tr>
+    <tr th:each="employee : ${employees}">
+        <td th:text="${employee.EmployeesId}">1</td>
+        <td th:text="${employee.Name}"> Spring in Action </td>
+        <td th:text="${employee.Location}"> Location </td>
+        <td th:text="${employee.__deleted}"> Status </td>
+    </tr>
+</table>
+
+</body>
+</html>
