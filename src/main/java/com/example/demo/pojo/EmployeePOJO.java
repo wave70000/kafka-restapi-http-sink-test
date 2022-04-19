@@ -1,5 +1,8 @@
 package com.example.demo.pojo;
 
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
 public class EmployeePOJO {
 
     public Long EmployeesId;
@@ -8,11 +11,4 @@ public class EmployeePOJO {
     public String Location;
     public String __deleted;
 
-    public EmployeePOJO(Long employeesId, Long __ts_ms, String name, String location, String __deleted) {
-        EmployeesId = employeesId;
-        this.__ts_ms = __ts_ms;
-        Name = name;
-        Location = location;
-        this.__deleted = __deleted;
-    }
 }

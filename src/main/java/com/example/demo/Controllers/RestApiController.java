@@ -23,16 +23,17 @@ public class RestApiController {
 
     @PostMapping("/api")
     public String api(@RequestBody String message) {
+        System.out.println(message);
         try {
             EmployeePOJO employeeParser = gson.fromJson(message.replaceAll("\\s",""), EmployeePOJO.class);
-            Employee employee = new com.example.demo.domain.Employee(
+            Employee employee = new Employee(
                     employeeParser.EmployeesId,
                     employeeParser.Name,
                     employeeParser.Location,
                     employeeParser.__deleted
             );
             employeeRepository.save(employee);
-            System.out.println(employeeRepository.findById(employeeParser.EmployeesId));
+//            System.out.println(employeeRepository.findById(employeeParser.EmployeesId));
         } catch (Exception e) {
             System.out.println(e);
         }
